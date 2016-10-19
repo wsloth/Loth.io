@@ -4,7 +4,7 @@
     <title>Wessel Loth | Loth.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
@@ -12,15 +12,35 @@
     <canvas id="demo-canvas"></canvas>
     
     <div class="container" id="author">
-        <h1>Wessel <strong>Loth</strong></h1>
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Wessel <strong>Loth</strong></h1>
+            </div>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="twelve columns flex-center-container">
-            <a href="https://www.linkedin.com/in/wessel-loth-6a094bb6" class="button">LinkedIn</a>
-            <a href="https://twitter.com/WesselLoth" class="button">Twitter</a>
-            <a href="https://github.com/wsloth" class="button">GitHub</a>
-            <a href="mailto:wessel.loth@gmail.com" class="button">Email</a>
+    <div class="container"> <!--flex-center-container-->
+
+        <div class="row">
+            <div class="col-sm-12 hidden-xs flex-center-container">
+                <a href="https://www.linkedin.com/in/wessel-loth-6a094bb6" class="btn">LinkedIn</a>
+                <a href="https://twitter.com/WesselLoth" class="btn">Twitter</a>
+                <a href="https://github.com/wsloth" class="btn">GitHub</a>
+                <a href="mailto:wessel.loth@gmail.com" class="btn">Email</a>
+            </div>
+
+            <div class="col-xs-6 visible-xs">
+                <a href="https://www.linkedin.com/in/wessel-loth-6a094bb6" class="btn btn-full-width">LinkedIn</a>
+            </div>
+            <div class="col-xs-6 visible-xs">
+                <a href="https://twitter.com/WesselLoth" class="btn btn-full-width">Twitter</a>
+            </div>
+            <div class="col-xs-6 visible-xs">
+                <a href="https://github.com/wsloth" class="btn btn-full-width">GitHub</a>
+            </div>
+            <div class="col-xs-6 visible-xs">
+                <a href="mailto:wessel.loth@gmail.com" class="btn btn-full-width">Email</a>
+            </div>
         </div>
     </div>
 
