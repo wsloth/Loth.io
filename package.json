@@ -1,0 +1,14 @@
+{
+  "name": "loth.io",
+  "version": "0.1.0",
+  "description": "Personal website of Wessel Loth.",
+  "main": "index.js",
+  "author": "Wessel Loth <wessel.loth@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "firebase-tools": "^3.0.8",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.10"
+  }
+}
