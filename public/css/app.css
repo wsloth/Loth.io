@@ -2,7 +2,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  color: #f7faff; }
+  color: #f7faff;
+  overflow-y: scroll; }
 
 #demo-canvas {
   position: fixed;
@@ -30,11 +31,17 @@ footer {
   font-size: 1.3em; }
   footer .separator {
     background-color: #deeaff; }
+  footer ul {
+    margin-left: 15px;
+    padding: 0; }
+    @media (min-width: 768px) {
+      footer ul {
+        margin-left: 25px; } }
   footer li {
     display: inline;
     margin-left: 20px; }
     footer li:first-child {
-      margin: 0; }
+      margin-left: 0 !important; }
     footer li a {
       color: #f7faff !important;
       transition: all 200ms; }

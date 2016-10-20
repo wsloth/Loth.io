@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     color: $main;
+    overflow-y: scroll;
 }
 
 #demo-canvas {
@@ -45,12 +46,20 @@ footer {
         background-color: darken($main, 5%);
     }
 
+    ul {
+        margin-left: 15px;
+        padding: 0;
+
+        @media (min-width: 768px) {
+            margin-left: 25px;
+        }
+    }
     li {
         display: inline;
         margin-left: 20px;
 
         &:first-child {
-            margin: 0;
+            margin-left: 0 !important;
         }
 
         a {
