@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
 
-$main: #F9F1E9;
+$main: #f7faff;
 
 html, body {
     margin: 0;
@@ -26,6 +26,41 @@ html, body {
         text-transform: uppercase;
         letter-spacing: 0.05em;
         font-size: 4.2em;
+    }
+}
+
+#author-email {
+    
+    margin-top: 50px;
+    color: $main !important;
+    transition: all 200ms;
+
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 1.3em;
+
+    .separator {
+        background-color: darken($main, 5%);
+    }
+
+    li {
+        display: inline;
+        margin-left: 20px;
+
+        &:first-child {
+            margin: 0;
+        }
+
+        a {
+            color: $main !important;
+            transition: all 200ms;
+            &:hover {
+                text-decoration: none;
+                color: darken($main, 20%) !important;
+            }
+        }
     }
 }
 
@@ -59,8 +94,8 @@ html, body {
     margin: 10px;
 
     &:hover {
-        color: darken($main, 10%);
-        border-color: darken($main, 10%);
+        color: darken($main, 20%);
+        border-color: darken($main, 20%);
     }
 }
 

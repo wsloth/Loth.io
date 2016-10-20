@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  color: #F9F1E9; }
+  color: #f7faff; }
 
 #demo-canvas {
   position: fixed;
@@ -19,6 +19,28 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 4.2em; }
+
+#author-email {
+  margin-top: 50px;
+  color: #f7faff !important;
+  transition: all 200ms; }
+
+footer {
+  margin-top: 50px;
+  font-size: 1.3em; }
+  footer .separator {
+    background-color: #deeaff; }
+  footer li {
+    display: inline;
+    margin-left: 20px; }
+    footer li:first-child {
+      margin: 0; }
+    footer li a {
+      color: #f7faff !important;
+      transition: all 200ms; }
+      footer li a:hover {
+        text-decoration: none;
+        color: #91baff !important; }
 
 #author-links {
   display: flex;
@@ -44,11 +66,11 @@ html, body {
   cursor: pointer;
   box-sizing: border-box;
   transition: all .25s;
-  color: #F9F1E9;
+  color: #f7faff;
   margin: 10px; }
   .btn:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-    color: #eed8c1;
-    border-color: #eed8c1; }
+    color: #91baff;
+    border-color: #91baff; }
 
 .btn-full-width {
   width: 100%; }
