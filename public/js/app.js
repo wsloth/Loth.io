@@ -202,7 +202,6 @@ var mobilecheck = function() {
     function Circle(pos,rad,color) {
         var _this = this;
 
-        // constructor
         (function() {
             _this.pos = pos || null;
             _this.radius = rad || null;
