@@ -13,13 +13,31 @@ html, body {
   background-size: cover; }
 
 #author {
-  padding-top: 15%; }
+  text-align: center; }
   #author h1 {
     font-weight: 400;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 4.2em; }
+  #author h2 {
+    font-weight: 100;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    margin-top: -50px; }
+  #author h3 {
+    font-weight: 100;
+    font-size: 2em; }
+  @media screen and (max-width: 470px) {
+    #author h1 {
+      padding-top: 0;
+      margin-top: 5%; }
+    #author h2 {
+      display: none; }
+    #author h3 {
+      margin-top: -35px; } }
+  @media screen and (min-width: 768px) {
+    #author h1 {
+      margin-top: 15%; } }
 
 #author-email {
   margin-top: 50px;
@@ -29,25 +47,18 @@ html, body {
 footer {
   margin-top: 50px;
   font-size: 1.3em; }
-  footer .separator {
-    background-color: #deeaff; }
-  footer ul {
+  footer p span.separator {
     margin-left: 15px;
-    padding: 0; }
-    @media (min-width: 768px) {
-      footer ul {
-        margin-left: 25px; } }
-  footer li {
-    display: inline;
-    margin-left: 20px; }
-    footer li:first-child {
-      margin-left: 0 !important; }
-    footer li a {
-      color: #f7faff !important;
-      transition: all 200ms; }
-      footer li a:hover {
-        text-decoration: none;
-        color: #91baff !important; }
+    margin-right: 15px; }
+  footer p a {
+    color: #f7faff !important;
+    transition: all 200ms; }
+    footer p a:hover {
+      text-decoration: none;
+      color: #91baff !important; }
+  @media screen and (min-width: 768px) {
+    footer p {
+      margin-left: 25px; } }
 
 #author-links {
   display: flex;
@@ -74,7 +85,11 @@ footer {
   box-sizing: border-box;
   transition: all .25s;
   color: #f7faff;
-  margin: 10px; }
+  margin-bottom: 15px; }
+  @media screen and (min-width: 768px) {
+    .btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+      margin-left: 10px;
+      margin-right: 10px; } }
   .btn:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
     color: #91baff;
     border-color: #91baff; }

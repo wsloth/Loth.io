@@ -2,6 +2,10 @@
 
 $main: #f7faff;
 
+$tiny: 320px;
+$mid: 470px;
+$wide: 768px;
+
 html, body {
     margin: 0;
     padding: 0;
@@ -19,14 +23,48 @@ html, body {
 
 #author {
 
-    padding-top: 15%;
+    text-align: center;
 
     h1 {
         font-weight: 400;
-        text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         font-size: 4.2em;
+    }
+
+    h2 {
+        font-weight: 100;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        margin-top: -50px;
+    }
+
+    h3 {
+        font-weight: 100;
+        font-size: 2em;
+    }
+
+    // Mobile view
+    @media screen and (max-width: $mid) {
+        h1 {
+            padding-top: 0;
+            margin-top: 5%;
+        }
+
+        h2 {
+            display: none;
+        }
+
+        h3 {
+            margin-top: -35px;
+        }
+    }
+
+    // Tablet or Desktop
+    @media screen and (min-width: $wide) {
+        h1 {
+            margin-top: 15%;
+        }
     }
 }
 
@@ -42,24 +80,10 @@ footer {
     margin-top: 50px;
     font-size: 1.3em;
 
-    .separator {
-        background-color: darken($main, 5%);
-    }
-
-    ul {
-        margin-left: 15px;
-        padding: 0;
-
-        @media (min-width: 768px) {
-            margin-left: 25px;
-        }
-    }
-    li {
-        display: inline;
-        margin-left: 20px;
-
-        &:first-child {
-            margin-left: 0 !important;
+    p {
+        span.separator {
+            margin-left: 15px;
+            margin-right: 15px;
         }
 
         a {
@@ -69,6 +93,9 @@ footer {
                 text-decoration: none;
                 color: darken($main, 20%) !important;
             }
+        }
+        @media screen and (min-width: $wide) {
+            margin-left: 25px;
         }
     }
 }
@@ -100,7 +127,12 @@ footer {
     transition: all .25s;
 
     color: $main;
-    margin: 10px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $wide) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
     &:hover {
         color: darken($main, 20%);
