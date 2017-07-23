@@ -1,0 +1,18 @@
+.sidenav {
+	width: 250px;
+	background-color: #3a4250;
+	padding: 30px 0;
+	color: white;
+}
+
+.sidenav-container {
+	height: 100%;
+}
+
+.sidenav-content, section {
+	display: flex;
+	height: 100%;
+	width: 100%;
+    background-color: #f2f2f2;
+}
+
