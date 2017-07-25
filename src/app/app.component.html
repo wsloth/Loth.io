@@ -1,38 +1,6 @@
-<!-- <md-toolbar color="primary">
-    <md-icon (click)="sidenav.toggle()">menu</md-icon>
-    <span>Wessel Loth</span>
-
-    <a md-button routerLink=".">Home</a>
-    <a md-button routerLink="blog">Blog</a>
-    <a md-button routerLink="about">About</a>
-</md-toolbar> -->
-
-
-<md-sidenav-container class="sidenav-container">
-
-    <md-sidenav #sidenav mode="side" opened="false" class="sidenav">
-        <md-nav-list>
-            <a md-list-item routerLink=".">
-                <md-icon md-list-icon>folder</md-icon>
-                Home
-            </a>
-            <a md-list-item routerLink="blog">
-                <md-icon md-list-icon>folder</md-icon>
-                Blog
-            </a>
-            <a md-list-item routerLink="blog">
-                <md-icon md-list-icon>folder</md-icon>
-                About
-            </a>
-        </md-nav-list>
-    </md-sidenav>
-
-    <div class="sidenav-content" fxLayout="row">
-
-        <section [@routerAnimations]="prepareRouteAnimation(r)">
-            <router-outlet #r="outlet">
-            </router-outlet>
-        </section>
-
-    </div>
-</md-sidenav-container>
+<main>
+    <section>
+        <router-outlet #r="outlet">
+        </router-outlet>
+    </section>
+</main>

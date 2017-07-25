@@ -4,202 +4,144 @@ main {
 	width: 100%;
 }
 
-section.introduction {
-	height: 100%;
-	display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    background-color: white;
-
-    .introduction__personal-info {
-        width: 100%;
-        text-align: center;
-
-        .background-initials {
-            font-size: 350px;
-            font-weight: bold;
-            // line-height: .7;
-            color: black;  //Fallback: assume this color ON TOP of image
-            background: linear-gradient(
-				45deg,
-				rgba(229, 18, 125, .2) 0%,
-				rgba(229, 18, 125, .6) 100%
-			),url('/assets/img/profile.jpg');
-            background-size: cover;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        h1.name {
-            font-size:70px;
-            color: black;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        span.subtitle {
-            font-size: 40px;
-            margin-top: 0;
-        }
-    }
-
-    .introduction__latest-info {
-        ul {
-            list-style: none;
-            padding: 0;
-            li {
-                // padding: 0;
-            }
-        }
-    }
-}
-
 @mixin default-transition {
-	transition: .6s transform cubic-bezier(.19, 1, .22, 1);
+	transition: 1s transform cubic-bezier(.19, 1, .22, 1);
 }
 
-section.links {
+.menu-transition {
+	z-index: 5;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+
+	.menu-transition__container {
+		height: 100%;
+		overflow: hidden;
+
+		.overlay {
+			height: 100%;
+			width: 100%;
+			background-color: #fff;
+		}
+	}
+}
+
+section.menu {
 	height: 100%;
 	display: flex;
 
-	div {
+	div.menu__block-wrapper {
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		cursor: pointer;
-		color: white;
+		height: 100%;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
 
-		h1 {
-			@include default-transition;
-			font-size: 65px;
-			margin: 0 0 0 15%;
-		}
+		.menu__block {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			cursor: pointer;
+			color: white;
 
-		div {
-			overflow: hidden;
-
-			p {
-				@include default-transition;
-				transform: translateY(100%);
-				overflow: hidden;
-                margin: 0 0 0 15%;
-                font-size: 20px;
-			}
-		}
-
-		h3 {
-			@include default-transition;
-			font-size: 30px;
-			margin: 0 0 0 15%;
-		}
-
-		&:hover {
 			h1 {
-				transform: translateY(-15%);
+				@include default-transition;
+				font-size: 65px;
+				font-weight: bold;
+				margin: 0 0 0 15%;
+				transform: translateY(40px);
 			}
-			div {
-				transform: translateY(0);
-				p {
-					transform: translateY(0);
+
+			.reveal {
+				@include default-transition;
+				transform: translateY(-100%);
+				overflow: hidden;
+				margin: 0 0 0 15%;
+				width: 75%;
+
+				.reveal__inner {
+					@include default-transition;
+					transform: translateY(100%);
+
+					p {
+						@include default-transition;
+						transform: translateY(100%);
+						overflow: hidden;
+						font-size: 20px;
+						height: 50px;
+						margin: 0;
+					}
 				}
 			}
+
 			h3 {
-				transform: translateY(25%);
-			}
-		}
-	}
-
-	div#blog {
-		background: linear-gradient(
-				45deg,
-				rgba(247, 198, 38, .5) 15%,
-				rgba(247, 198, 38, .5) 40%,
-				rgba(229, 18, 125, .0) 85%
-			),
-			url('/assets/img/blog.jpg');
-		background-size: cover;
-	}
-	div#about {
-		background: linear-gradient(
-				45deg,
-				rgba(229, 18, 125, 0) 15%,
-				rgba(229, 18, 125, .4) 60%,
-				rgba(229, 18, 125, .6) 95%
-			),
-			url('/assets/img/about.jpg');
-		background-size: cover;
-	}
-}
-
-.ayylmao {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	cursor: pointer;
-
-	div {
-		width: 100%;
-		transition: all .3s;
-		margin-left: 15%;
-
-		h1 {
-			width: 8%;
-			transition: all .3s;
-			font-size: 65px;
-			font-weight: bold;
-			margin-bottom: 0;
-		}
-
-		p {
-			transition: all .3s;
-			opacity: 0;
-			transform: translateY(100%);
-			margin-bottom: 0;
-			margin-top: 0;
-		}
-
-		h3 {
-			transition: all .3s;
-			font-size: 30px;
-			margin-top: 0;
-		}
-	}
-
-	&:first-child {
-		background-color: pink;
-	}
-	&:nth-child(2) {
-		background-color: lightskyblue;
-	}
-	&:nth-child(3) {
-		background-color: lightsalmon;
-	}
-
-	&:hover {
-		div {
-			transition: all .3s;
-
-			h1 {
-				transform: translateY(-10%);
-				color: white;
-			}
-			h3 {
-				transform: translateY(10%);
-				color: white;
+				@include default-transition;
+				font-size: 30px;
+				font-weight: 100;
+				margin: 0 0 100px 15%;
 			}
 
-			p {
-				transition: all .3s;
-				opacity: 1;
-				transform: translateY(0);
+			&:hover {
+				h1 {
+					transform: translateY(-30px) !important;
+				}
+
+				.reveal {
+					transform: translateY(0);
+
+					.reveal__inner {
+						transform: translateY(0);
+
+						p {
+							transform: translateY(0);
+						}
+					}
+				}
+				h3 {
+					transform: translateY(30px);
+				}
 			}
 		}
 	}
 }
 
-// section {
-//     display: flex;
-// 	align-items: center;
-//     justify-content: center;
-//     margin-bottom: 30px;
-// }
+#blog {
+	background: linear-gradient(
+			45deg,
+			rgba(247, 198, 38, .5) 15%,
+			rgba(247, 198, 38, .5) 40%,
+			rgba(229, 18, 125, .0) 85%
+		),
+		url('/assets/img/blog.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#about {
+	background: linear-gradient(
+			45deg,
+			rgba(229, 18, 125, 0) 15%,
+			rgba(229, 18, 125, .4) 60%,
+			rgba(229, 18, 125, .6) 95%
+		),
+		url('/assets/img/about.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#intro {
+	background: linear-gradient(
+			25deg,
+			rgba(33, 150, 243, .4) 15%,
+			rgba(33, 150, 243, .05) 55%,
+			rgba(33, 150, 243, .1) 85%
+		),
+		url('/assets/img/profile.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}

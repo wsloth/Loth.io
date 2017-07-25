@@ -1,35 +1,55 @@
+<div class="menu-transition" fxLayout="row" *ngIf="showOverlay">
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
+        <div class="overlay" id="overlay-intro"></div>
+    </div>
+
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
+        <div class="overlay" id="overlay-blog"></div>
+    </div>
+
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
+        <div class="overlay" id="overlay-about"></div>
+    </div>
+</div>
+
 <main fxLayout="row">
-    <section class="introduction" fxFlex.lg="50%">
-        <div class="introduction__personal-info">
-            <span class="background-initials">W</span>
 
-            <h1 class="name">Wessel Loth</h1>
-            <span class="subtitle">Full Stack Developer</span>
+    <section class="menu" fxFlex="100%" fxLayout="column" fxLayout.gt-md="row">
+
+        <div class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="intro" class="menu__block">
+                <h1>Wessel Loth</h1>
+                <div class="reveal">
+                    <div class="reveal__inner">
+                        <p>I love to create meaningful software with passion, skill and a cup of coffee.</p>
+                    </div>
+                </div>
+                <h3>Full Stack Developer</h3>
+            </div>
         </div>
 
-        <!-- <div class="introduction__latest-info">
-            <ul>
-                <li>Animation updates in Angular 4</li>
-                <li>.NET Core Entity Framework performance</li>
-                <li>React Native responsive UI</li>
-            </ul>
-        </div> -->
-    </section>
-
-    <section class="links" fxFlex.lg="50%" fxLayout="column">
-        <div id="blog" fxFlex.lg="50%">
-            <h1>Blog</h1>
-            <div class="reveal">
-                <p>Mauris ullamcorper finibus ligula, eget mollis orci semper id.</p>
+        <div class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="blog" class="menu__block">
+                <h1>Blog</h1>
+                <div class="reveal">
+                    <div class="reveal__inner">
+                        <p>Read my latest ramblings about software development in the real world.</p>
+                    </div>
+                </div>
+                <h3>The latest from me</h3>
             </div>
-            <h3>The latest from me</h3>
         </div>
-        <div id="about" fxFlex.lg="50%">
-            <h1>About</h1>
-            <div class="reveal">
-                <p>Sed elementum urna ex. Donec auctor interdum nisl sed laoreet.</p>
+
+        <div class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="about" class="menu__block">
+                <h1>About</h1>
+                <div class="reveal">
+                    <div class="reveal__inner">
+                        <p>Sed elementum urna ex. Donec auctor interdum nisl sed laoreet.</p>
+                    </div>
+                </div>
+                <h3>Get in touch</h3>
             </div>
-            <h3>Get in touch</h3>
         </div>
     </section>
 </main>
