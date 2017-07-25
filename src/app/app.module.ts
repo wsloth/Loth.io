@@ -11,6 +11,7 @@ import { MarkdownModule } from 'angular2-markdown';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
+import { RoutingService } from './services/routing.service';
 
 export const routes: Routes = [
 	{
@@ -44,7 +45,7 @@ export const routes: Routes = [
 		MarkdownModule.forRoot(),
 		RouterModule.forRoot(routes)
 	],
-	providers: [],
+	providers: [ RoutingService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

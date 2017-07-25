@@ -1,3 +1,17 @@
+<div class="transition" fxLayout="row" *ngIf="showOverlay">
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="transition__container">
+        <div class="overlay" id="overlay-left"></div>
+    </div>
+
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="transition__container">
+        <div class="overlay" id="overlay-middle"></div>
+    </div>
+
+    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="transition__container">
+        <div class="overlay" id="overlay-right"></div>
+    </div>
+</div>
+
 <main>
     <section>
         <router-outlet #r="outlet">

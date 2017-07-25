@@ -8,28 +8,6 @@ main {
 	transition: 1s transform cubic-bezier(.19, 1, .22, 1);
 }
 
-.menu-transition {
-	z-index: 5;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-
-	.menu-transition__container {
-		height: 100%;
-		overflow: hidden;
-
-		.overlay {
-			height: 100%;
-			width: 100%;
-			background-color: #fff;
-		}
-	}
-}
-
 section.menu {
 	height: 100%;
 	display: flex;
