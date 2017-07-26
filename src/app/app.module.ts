@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MarkdownModule } from 'angular2-markdown';
@@ -41,7 +41,7 @@ export const routes: Routes = [
 		HttpClientModule,
 		BrowserAnimationsModule,
 		FlexLayoutModule,
-		MaterialModule,
+		// MaterialModule,
 		MarkdownModule.forRoot(),
 		RouterModule.forRoot(routes)
 	],
