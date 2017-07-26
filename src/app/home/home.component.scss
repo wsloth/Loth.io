@@ -28,56 +28,60 @@ section.home {
 			cursor: pointer;
 			color: white;
 
-			h1 {
-				@include default-transition;
-				margin: 0 0 0 15%;
-				transform: translateY(40px);
-			}
-
-			.reveal {
-				@include default-transition;
-				transform: translateY(-100%);
-				overflow: hidden;
-				margin: 0 0 0 15%;
-				width: 75%;
-
-				.reveal__inner {
-					@include default-transition;
-					transform: translateY(100%);
-
-					p {
-						@include default-transition;
-						transform: translateY(100%);
-						overflow: hidden;
-						height: 50px;
-						margin: 0;
-					}
-				}
-			}
-
-			h3 {
-				@include default-transition;
-				margin: 0 0 100px 15%;
-			}
-
-			&:hover {
+			.block-text {
 				h1 {
-					transform: translateY(-30px) !important;
+					@include default-transition;
+					margin: 0 0 0 15%;
+					transform: translateY(40px);
 				}
 
 				.reveal {
-					transform: translateY(0);
+					@include default-transition;
+					transform: translateY(-100%);
+					overflow: hidden;
+					margin: 0 0 0 15%;
+					width: 75%;
 
 					.reveal__inner {
-						transform: translateY(0);
+						@include default-transition;
+						transform: translateY(100%);
 
 						p {
-							transform: translateY(0);
+							@include default-transition;
+							transform: translateY(100%);
+							overflow: hidden;
+							height: 50px;
+							margin: 0;
 						}
 					}
 				}
+
 				h3 {
-					transform: translateY(30px);
+					@include default-transition;
+					margin: 0 0 100px 15%;
+				}
+			}
+
+			&:hover {
+				.block-text {
+					h1 {
+						transform: translateY(-30px) !important;
+					}
+
+					.reveal {
+						transform: translateY(0);
+
+						.reveal__inner {
+							transform: translateY(0);
+
+							p {
+								transform: translateY(0);
+							}
+						}
+					}
+					h3 {
+						transform: translateY(30px);
+					}
 				}
 			}
 		}

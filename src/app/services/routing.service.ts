@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { Location } from "@angular/common";
 
 /**
  * Service responsible for notifying components about route changes
@@ -28,7 +29,15 @@ export class RoutingService {
 		return this.transitionOutFinishedSubject.asObservable();
 	}
 
-	constructor(private router: Router) {}
+	constructor(private router: Router, private location: Location) {
+		// When the user has pressed the back button, manually fire event
+		this.location.subscribe(() => {
+			// Timeout so components have a chance to initialize
+			setTimeout(() => {
+				this.notifyTransitionOutFinished();
+			}, 250);
+		});
+	}
 
 	/**
 	 * Go to a new route and perform transitions.

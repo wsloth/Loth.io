@@ -43,8 +43,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 	 * 
 	 * @memberof AppComponent
 	 */
-	public ngAfterViewInit() {
-		this.animateTransitionOut();
+	public async ngAfterViewInit() {
+		this.routingService.notifyTransitionOutStarted();
+		await this.animateTransitionOut();
+		this.routingService.notifyTransitionOutFinished();
 	}
 
 	public ngOnDestroy(): void {

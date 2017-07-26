@@ -26,6 +26,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // GLOBAL STYLES ============================================================ #
 
 @import './styles/_variables';
+@import './styles/_mixins';
 
 html,
 body {
@@ -62,17 +63,20 @@ ul {
 	}
 }
 
+.reveal-fade {
+	opacity: 0;
+}
 
-.reveal-text {
-	position: relative;
-	// color: black;
+.reveal-slide {
+	transform: translateY(100%);
+	overflow: hidden;
+	opacity: 0;
 
-	.reveal-text__line {
-		position: absolute;
-		white-space: nowrap;
-		top: 0;
-		left: 0;
-		// color: #fff;
-		visibility: hidden;
+	.reveal-slide__inner {
+		transform: translateY(-100%);
+
+		.reveal-slide__inner-content {
+			transform: translateY(-100%);
+		}
 	}
 }

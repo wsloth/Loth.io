@@ -1,15 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Revealable } from '../shared/revealable';
+import ScrollMagic from 'scrollmagic';
+import { RoutingService } from '../services/routing.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: 'loth-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+	selector: 'loth-contact',
+	templateUrl: './contact.component.html',
+	styleUrls: [ './contact.component.scss' ]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent extends Revealable implements OnInit, OnDestroy {
 
-  constructor() { }
+    private scrollMagicController: ScrollMagic.Controller;
+    private subscription: Subscription;
 
-  ngOnInit() {
-  }
+	constructor(public routingService: RoutingService) {
+        super();
+        
+        this.subscription = this.routingService.onTransitionOutFinished.subscribe(() => {
+            this.revealElementsOnPage(this.scrollMagicController);
+        });
+	}
 
+	ngOnInit() {
+        this.scrollMagicController = new ScrollMagic.Controller({
+            loglevel: 0
+        })
+    }
+
+    ngOnDestroy() {
+        if (this.scrollMagicController) {
+            this.scrollMagicController.destroy();
+        }
+        this.subscription.unsubscribe();
+    }
 }
