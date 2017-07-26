@@ -11,9 +11,5 @@ import { RoutingService } from '../services/routing.service';
 	styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent {
-	constructor(private routingService: RoutingService) {}
-
-	public onPageLinkClick() {
-		this.routingService.go('contact');
-	}
+	constructor(public routingService: RoutingService) {}
 }

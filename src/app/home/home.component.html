@@ -1,23 +1,9 @@
-<div class="menu-transition" fxLayout="row" *ngIf="showOverlay">
-    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
-        <div class="overlay" id="overlay-intro"></div>
-    </div>
-
-    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
-        <div class="overlay" id="overlay-blog"></div>
-    </div>
-
-    <div fxFlex.xs="100%" fxFlex.lg="33.333333%" class="menu-transition__container">
-        <div class="overlay" id="overlay-about"></div>
-    </div>
-</div>
-
 <main fxLayout="row">
 
-    <section class="menu" fxFlex="100%" fxLayout="column" fxLayout.gt-md="row">
+    <section class="home" fxFlex="100%" fxLayout="column" fxLayout.gt-md="row">
 
-        <div (click)="onPageLinkClick()" class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
-            <div id="intro" class="menu__block">
+        <div (click)="routingService.routeTo('about')" class="home__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="intro" class="home__block">
                 <h1>Wessel Loth</h1>
                 <div class="reveal">
                     <div class="reveal__inner">
@@ -28,8 +14,8 @@
             </div>
         </div>
 
-        <div (click)="onPageLinkClick()" class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
-            <div id="blog" class="menu__block">
+        <div (click)="routingService.routeTo('blog')" class="home__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="blog" class="home__block">
                 <h1>Blog</h1>
                 <div class="reveal">
                     <div class="reveal__inner">
@@ -40,12 +26,12 @@
             </div>
         </div>
 
-        <div (click)="onPageLinkClick()" class="menu__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
-            <div id="about" class="menu__block">
-                <h1>About</h1>
+        <div (click)="routingService.routeTo('contact')" class="home__block-wrapper" fxFlex="100%" fxFlex.gt-md="33.3333333%">
+            <div id="about" class="home__block">
+                <h1>Contact</h1>
                 <div class="reveal">
                     <div class="reveal__inner">
-                        <p>Sed elementum urna ex. Donec auctor interdum nisl sed laoreet.</p>
+                        <p>Want to have coffee with me or just shoot an email? Click here for my info.</p>
                     </div>
                 </div>
                 <h3>Get in touch</h3>

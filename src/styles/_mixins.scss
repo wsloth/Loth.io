@@ -1,0 +1,15 @@
+@mixin default-transition {
+	transition: 1s transform cubic-bezier(.19, 1, .22, 1);
+}
+
+@mixin fill-host-component {
+	:host {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+@mixin text-readable-paragraph {
+	line-height: 1.688rem;
+	letter-spacing: .03rem;
+}

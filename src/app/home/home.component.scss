@@ -1,25 +1,25 @@
-:host,
+@import '~styles/_variables';
+@import '~styles/_mixins';
+
+// Fill both the host and main
+@include fill-host-component;
 main {
 	height: 100%;
 	width: 100%;
 }
 
-@mixin default-transition {
-	transition: 1s transform cubic-bezier(.19, 1, .22, 1);
-}
-
-section.menu {
+section.home {
 	height: 100%;
 	display: flex;
 
-	div.menu__block-wrapper {
+	div.home__block-wrapper {
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
 		padding: 0;
 		margin: 0;
 
-		.menu__block {
+		.home__block {
 			width: 100%;
 			height: 100%;
 			display: flex;
@@ -30,8 +30,6 @@ section.menu {
 
 			h1 {
 				@include default-transition;
-				font-size: 65px;
-				font-weight: bold;
 				margin: 0 0 0 15%;
 				transform: translateY(40px);
 			}
@@ -51,7 +49,6 @@ section.menu {
 						@include default-transition;
 						transform: translateY(100%);
 						overflow: hidden;
-						font-size: 20px;
 						height: 50px;
 						margin: 0;
 					}
@@ -60,8 +57,6 @@ section.menu {
 
 			h3 {
 				@include default-transition;
-				font-size: 30px;
-				font-weight: 100;
 				margin: 0 0 100px 15%;
 			}
 
@@ -92,9 +87,9 @@ section.menu {
 #blog {
 	background: linear-gradient(
 			45deg,
-			rgba(247, 198, 38, .5) 15%,
-			rgba(247, 198, 38, .5) 40%,
-			rgba(229, 18, 125, .0) 85%
+			rgba($primary-yellow, .5) 15%,
+			rgba($primary-yellow, .5) 40%,
+			rgba(0, 0, 0, .0) 85%
 		),
 		url('/assets/img/blog.jpg');
 	background-size: cover;
@@ -103,9 +98,9 @@ section.menu {
 #about {
 	background: linear-gradient(
 			45deg,
-			rgba(229, 18, 125, 0) 15%,
-			rgba(229, 18, 125, .4) 60%,
-			rgba(229, 18, 125, .6) 95%
+			rgba($primary-purple, 0) 15%,
+			rgba($primary-purple, .4) 60%,
+			rgba($primary-purple, .6) 95%
 		),
 		url('/assets/img/about.jpg');
 	background-size: cover;
@@ -115,9 +110,9 @@ section.menu {
 #intro {
 	background: linear-gradient(
 			25deg,
-			rgba(33, 150, 243, .4) 15%,
-			rgba(33, 150, 243, .05) 55%,
-			rgba(33, 150, 243, .1) 85%
+			rgba($primary-blue, .4) 15%,
+			rgba($primary-blue, .05) 55%,
+			rgba($primary-blue, .1) 85%
 		),
 		url('/assets/img/profile.jpg');
 	background-size: cover;

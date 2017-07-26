@@ -25,6 +25,8 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 // GLOBAL STYLES ============================================================ #
 
+@import './styles/_variables';
+
 html,
 body {
 	margin: 0;
@@ -32,8 +34,45 @@ body {
 	height: 100%;
 	width: 100%;
 	font-family: 'Roboto', 'Helvetica', sans-serif;
+	color: $primary-dark;
+	font-size: $font-size-default;
 }
 
 h1 {
-	font-family: 'Roboto Condensed', 'Roboto', 'Helvetica', sans-serif;
+	font-family: 'Roboto Condensed', $font-stack-default;
+	font-size: $font-size-h1;
+}
+
+h2 {
+	font-size: $font-size-h2;
+	font-weight: 100;
+}
+
+h3 {
+	font-size: $font-size-h3;
+	font-weight: 100;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+
+	li {
+		margin-bottom: .5rem;
+	}
+}
+
+
+.reveal-text {
+	position: relative;
+	// color: black;
+
+	.reveal-text__line {
+		position: absolute;
+		white-space: nowrap;
+		top: 0;
+		left: 0;
+		// color: #fff;
+		visibility: hidden;
+	}
 }

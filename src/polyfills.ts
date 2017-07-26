@@ -73,6 +73,3 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 // HammerJS for touch controls
 import 'hammerjs';
-
-// GSAP for animations
-// import 'gsap';

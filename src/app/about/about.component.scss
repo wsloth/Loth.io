@@ -1,0 +1,44 @@
+@import '~styles/_variables';
+@import '~styles/_mixins';
+
+@include fill-host-component;
+
+#image {
+	background: url('/assets/img/profile2.jpg');
+	background-size: cover;
+}
+
+.about {
+	width: 100%;
+	height: 100%;
+
+	.about__block-wrapper {
+		height: 100%;
+		width: 100%;
+
+		.about__block {
+			width: 100%;
+            height: 100%;
+		}
+	}
+}
+
+#about {
+    overflow-y: scroll;
+
+    article {
+        @include text-readable-paragraph;
+        
+        padding: 100px;
+    }
+
+    article.black {
+        background-color: $primary-dark;
+        color: $primary-light;
+    }
+
+    article.white {
+        background-color: $primary-light;
+    }
+
+}
