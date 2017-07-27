@@ -13,6 +13,16 @@
 </div>
 
 <main>
+     <header class="topbar">
+        
+        <div *ngIf="showMenu" id="menu-icon" class="menu-icon" (click)="routingService.routeTo('.')">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </header> 
+
     <section>
         <router-outlet #r="outlet">
         </router-outlet>

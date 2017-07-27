@@ -1,5 +1,5 @@
-@mixin default-transition {
-	transition: 1s transform cubic-bezier(.19, 1, .22, 1);
+@mixin default-transition($type:"transform") {
+	transition: 1s unquote($type) cubic-bezier(.19, 1, .22, 1);
 }
 
 @mixin fill-host-component {
