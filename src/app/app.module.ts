@@ -14,6 +14,7 @@ import { BlogComponent } from './blog/blog.component';
 import { RoutingService } from './services/routing.service';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { AnimationService } from './animations/animation.service';
 
 export const routes: Routes = [
 	{
@@ -45,7 +46,7 @@ export const routes: Routes = [
 		MarkdownModule.forRoot(),
 		RouterModule.forRoot(routes)
 	],
-	providers: [ RoutingService ],
+	providers: [ RoutingService, AnimationService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

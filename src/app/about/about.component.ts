@@ -1,27 +1,26 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import ScrollMagic from 'scrollmagic';
-import 'animation.gsap';
-import { TimelineMax, TweenMax, Expo } from 'gsap';
-import { RoutingService } from '../services/routing.service';
 import { Subscription } from 'rxjs/Subscription';
-import { Revealable } from '../shared/revealable';
+import ScrollMagic from 'scrollmagic';
+import { TimelineMax, TweenMax, Expo } from 'gsap';
+import 'animation.gsap';
+
+import { RoutingService } from '../services/routing.service';
+import { AnimationService } from '../animations/animation.service';
 
 @Component({
 	selector: 'loth-about',
 	templateUrl: './about.component.html',
 	styleUrls: [ './about.component.scss' ]
 })
-export class AboutComponent extends Revealable implements OnInit, AfterViewInit, OnDestroy {
+export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
 	private scrollMagicController: ScrollMagic.Controller;
 	private subscription: Subscription;
 
-	constructor(public routingService: RoutingService) {
-		super();
-	}
+	constructor(public routingService: RoutingService, private animationService: AnimationService) {}
 
 	ngOnInit() {
 		this.subscription = this.routingService.onTransitionOutFinished.subscribe(() => {
-			this.revealElementsOnPage(this.scrollMagicController);
+			this.animationService.initializeAnimations(this.scrollMagicController);
 			this.setUpAnimationsForPage(this.scrollMagicController);
 		});
 
@@ -51,7 +50,7 @@ export class AboutComponent extends Revealable implements OnInit, AfterViewInit,
 				$slide1,
 				2.5,
 				{ padding: '100px 200px 500px 200px' },
-				{ padding: '100px 200px 160px 200px', ease: Expo.easeOut,  }
+				{ padding: '100px 200px 160px 200px', ease: Expo.easeOut }
 			)
 		]);
 

@@ -1,25 +1,24 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Http } from '@angular/http/http';
 import { HttpClient } from '@angular/common/http';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 import ScrollMagic from 'scrollmagic';
 import { TimelineMax, TweenMax, Quad, Expo } from 'gsap';
+
 import { RoutingService } from '../services/routing.service';
-import { Revealable } from '../shared/revealable';
-import { Subscription } from 'rxjs/Subscription';
-import { Router, NavigationEnd } from '@angular/router';
+import { AnimationService } from '../animations/animation.service';
 
 @Component({
 	selector: 'loth-home',
 	templateUrl: './home.component.html',
 	styleUrls: [ './home.component.scss' ]
 })
-export class HomeComponent extends Revealable implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
 	private scrollMagicController: ScrollMagic.Controller;
 	private transitionFinishedSubscription: Subscription;
 
-	constructor(public routingService: RoutingService) {
-		super();
-	}
+	constructor(public routingService: RoutingService, private animationService: AnimationService) {}
 
 	ngOnInit() {
 		this.scrollMagicController = new ScrollMagic.Controller({
@@ -27,7 +26,7 @@ export class HomeComponent extends Revealable implements OnInit, OnDestroy {
 		});
 
 		this.transitionFinishedSubscription = this.routingService.onTransitionOutFinished.subscribe(() => {
-			this.revealElementsOnPage(this.scrollMagicController);
+			this.animationService.initializeAnimations(this.scrollMagicController);
 		});
 	}
 

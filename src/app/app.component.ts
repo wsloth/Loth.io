@@ -90,7 +90,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
 			setTimeout(
 				() =>
-					TweenMax.fromTo($left, 1, { backgroundColor: '#fff', x: '-100%' }, { x: '0%', ease: Expo.easeOut }),
+					TweenMax.fromTo($left, 1, { backgroundColor: '#252525', x: '-100%' }, { x: '0%', ease: Expo.easeOut }),
 				0
 			);
 			setTimeout(
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 					TweenMax.fromTo(
 						$middle,
 						1,
-						{ backgroundColor: '#fff', x: '-100%' },
+						{ backgroundColor: '#252525', x: '-100%' },
 						{ x: '0%', ease: Expo.easeOut }
 					),
 				200
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 					TweenMax.fromTo(
 						$right,
 						1,
-						{ backgroundColor: '#fff', x: '-100%' },
+						{ backgroundColor: '#252525', x: '-100%' },
 						{ x: '0%', ease: Expo.easeOut }
 					),
 				400
@@ -129,17 +129,17 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 			let $middle = document.getElementById('overlay-middle');
 			let $right = document.getElementById('overlay-right');
 
-			TweenMax.fromTo($left, 1.5, { backgroundColor: '#fff' }, { backgroundColor: '#252525', ease: Expo.easeIn });
+			TweenMax.fromTo($left, 1.5, { backgroundColor: '#252525' }, { backgroundColor: '#252525', ease: Expo.easeIn });
 			TweenMax.fromTo(
 				$middle,
 				1.5,
-				{ backgroundColor: '#fff' },
+				{ backgroundColor: '#252525' },
 				{ backgroundColor: '#252525', ease: Expo.easeIn }
 			);
 			TweenMax.fromTo(
 				$right,
 				1.5,
-				{ backgroundColor: '#fff' },
+				{ backgroundColor: '#252525' },
 				{ backgroundColor: '#252525', ease: Expo.easeIn }
 			);
 
