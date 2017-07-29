@@ -35,11 +35,11 @@ export class RevealSlideAnimation implements Animation {
 
 			// Make the element visible on the page
 			$element.style.opacity = '1';
-			$inner.style.height = `${initY + 1}px`;
+			$inner.style.height = `${initY + 5}px`;
 
 			// Set up animation
 			tl.add([
-				TweenMax.fromTo($element, 1, { y: initY + 10 }, { y: 0, ease: Expo.easeOut }),
+				TweenMax.fromTo($element, 1, { y: initY + 10 }, { overflow: 'inherit', y: 0, ease: Expo.easeOut }),
 				TweenMax.fromTo($inner, 1, { y: -1 * (initY + 10) }, { y: 0, ease: Expo.easeOut }),
 				TweenMax.fromTo($innerContent, 1, { y: -1 * (initY + 10) }, { y: 0, ease: Expo.easeOut })
 			]);
